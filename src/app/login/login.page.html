@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Welcome to ToDoApp</h1>
+      <p>Silahkan masuk untuk melanjutkan</p>
+    </div>
+    <div class="login-form ion-padding">
+      <div class="form-input">
+
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="text" [(ngModel)]="username"  required="required"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password"  required="required"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="action-buttons ion-padding">
+      <ion-button type="submit" size="large" class="login-button" (click)="login()" expand="block">Log in</ion-button>
+    </div>
+  </div>
+</ion-content>

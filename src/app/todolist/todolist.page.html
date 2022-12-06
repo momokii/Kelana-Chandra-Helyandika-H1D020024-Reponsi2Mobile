@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>ToDoList : {{ nama_user }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size = 'large'>
+        Data ToDo : {{nama_user}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+    <ion-button type="button" [routerLink] = '["/todo-tambah"]' routerLinkActive="router-link-active" color="success">
+      Tambah ToDo Baru
+    </ion-button>
+
+
+
+  <ion-list>
+    <ion-list-header>
+      ToDoList {{nama_user}}
+    </ion-list-header>
+  </ion-list>
+
+  <ion-card lines="inset" *ngFor="let todo of todolist">
+
+    <ion-item>
+      <ion-icon name="bookmarks" slot="start"></ion-icon>
+      <ion-label>{{ todo.nama }}</ion-label>
+      <ion-button color="success" slot="end" (click)="selesaiToDo(todo.id)" >Selesai</ion-button>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-text>{{ todo.deskripsi }}</ion-text>
+      <ion-button color="primary" slot="end" [routerLink] = "['/todo-edit/', todo.id]"
+      routerLinkActive = "router-link-active">Edit</ion-button>
+      <ion-button color="danger" slot="end" (click)="deleteToDo(todo.id)" >Hapus</ion-button>
+    </ion-item>
+
+
+  </ion-card>
+
+</ion-content>

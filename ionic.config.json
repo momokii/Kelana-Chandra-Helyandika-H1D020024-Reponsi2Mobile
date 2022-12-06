@@ -1,0 +1,7 @@
+{
+  "name": "todo-responsi2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
